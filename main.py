@@ -36,7 +36,7 @@ BUCKET = os.getenv("BUCKET_NAME")
 
 @app.get("/presigned-url")
 def get_presigned_url(filename: str):
-    key = f"pre-sign-create-data/DispItemData/DispItem/TypeA/StrImg/other/{filename}"
+    key = f"DispItemData/DispItem/TypeA/StrImg/other/{filename}"
     url = s3.generate_presigned_url(
         ClientMethod='put_object',
         Params={
